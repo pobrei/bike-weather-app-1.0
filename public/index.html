@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bike Weather Planner</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🚴 Bike Weather Planner</h1>
+    
+    <div class="controls">
+      <div class="input-group">
+        <label for="startTime">Start Time:</label>
+        <input type="datetime-local" id="startTime" required>
+      </div>
+      <div class="input-group">
+        <label for="avgSpeed">Avg Speed (km/h):</label>
+        <input type="number" id="avgSpeed" min="10" max="40" value="20" required>
+      </div>
+      <div class="input-group">
+        <label for="weatherInterval">Weather every (km):</label>
+        <input type="number" id="weatherInterval" min="1" max="100" value="5" required>
+      </div>
+      <div class="file-input">
+        <input type="file" id="gpxUpload" accept=".gpx">
+        <label for="gpxUpload" class="upload-btn">Upload GPX Route</label>
+      </div>
+    </div>
+
+    <div id="map"></div>
+    
+    <div class="weather-container">
+      <div id="weatherTimeline"></div>
+      <div id="errorContainer"></div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
